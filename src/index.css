@@ -1,0 +1,34 @@
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-section{
+  padding:100px 0;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+}
+
+.hero-logo{
+  max-width:350px;
+}
+
+.page-section{
+  padding:80px 0;
+}
+
+.service-card{
+  margin-top:20px;
+  transition:0.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.footer{
+  background:#111;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
