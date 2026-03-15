@@ -7,8 +7,11 @@ import {
   FaCloud,
   FaDatabase
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+
+  const navigate = useNavigate();
 
   const services = [
     {
@@ -45,9 +48,6 @@ const Services = () => {
 
   return (
     <div>
-
-      {/* HERO */}
-
       <div
         style={{
           background: "linear-gradient(135deg,#0f2027,#203a43,#2c5364)",
@@ -76,15 +76,9 @@ const Services = () => {
 
         </Container>
       </div>
-
-      {/* SERVICES GRID */}
-
       <Container style={{ padding: "70px 20px" }}>
-
         <Row>
-
           {services.map((service, index) => (
-
             <Col md={4} sm={6} key={index} style={{ marginBottom: "30px" }}>
 
               <Card
@@ -94,14 +88,25 @@ const Services = () => {
                   border: "none",
                   borderRadius: "12px",
                   boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
-                  transition: "0.3s"
+                  transition: "all 0.3s ease",
+                  cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-10px)";
+                  e.currentTarget.style.boxShadow = "0 18px 40px rgba(0,0,0,0.15)";
+                  e.currentTarget.style.background = "#f8fbff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
                 }}
               >
 
                 <div
                   style={{
                     color: "#1e88e5",
-                    marginBottom: "20px"
+                    marginBottom: "20px",
+                    transition: "0.3s"
                   }}
                 >
                   {service.icon}
@@ -116,17 +121,10 @@ const Services = () => {
                 </p>
 
               </Card>
-
             </Col>
-
           ))}
-
         </Row>
-
       </Container>
-
-      {/* DETAIL SECTION */}
-
       <div
         style={{
           background: "#f4f7fb",
@@ -135,11 +133,8 @@ const Services = () => {
       >
 
         <Container>
-
           <Row className="align-items-center">
-
             <Col md={6} style={{ marginBottom: "30px" }}>
-
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
                 alt="development"
@@ -147,9 +142,7 @@ const Services = () => {
               />
 
             </Col>
-
             <Col md={6}>
-
               <h2 style={{ fontWeight: "700", marginBottom: "20px" }}>
                 Smart Digital Solutions
               </h2>
@@ -166,17 +159,10 @@ const Services = () => {
                 combine creativity and technology to build reliable systems
                 that support long-term digital growth.
               </p>
-
             </Col>
-
           </Row>
-
         </Container>
-
       </div>
-
-      {/* CTA */}
-
       <div
         style={{
           background: "linear-gradient(135deg,#0f4c81,#1e88e5)",
@@ -185,9 +171,7 @@ const Services = () => {
           color: "white"
         }}
       >
-
         <Container>
-
           <h2 style={{ fontWeight: "700", marginBottom: "20px" }}>
             Ready to Start Your Digital Journey?
           </h2>
@@ -195,7 +179,6 @@ const Services = () => {
           <p style={{ marginBottom: "30px", fontSize: "18px" }}>
             Let's build innovative technology solutions together.
           </p>
-
           <Button
             style={{
               background: "#4CAF50",
@@ -203,14 +186,12 @@ const Services = () => {
               padding: "12px 30px",
               fontSize: "17px"
             }}
+            onClick={() => navigate("/contact")}
           >
             Contact Us
           </Button>
-
         </Container>
-
       </div>
-
     </div>
   );
 };

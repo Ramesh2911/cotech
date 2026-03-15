@@ -1,11 +1,33 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
-import { FaLaptopCode, FaMobileAlt, FaRobot, FaCogs } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Card
+}
+  from "react-bootstrap";
+import {
+  FaLaptopCode,
+  FaMobileAlt,
+  FaRobot,
+  FaCogs
+}
+  from "react-icons/fa";
+import about from "../assets/about.jpg";
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   return (
     <div>
-
-      {/* HERO SECTION */}
 
       <div
         style={{
@@ -36,15 +58,11 @@ const About = () => {
         </Container>
       </div>
 
-      {/* COMPANY INTRO */}
-
       <Container style={{ padding: "70px 20px" }}>
-
         <Row className="align-items-center">
-
           <Col md={6} style={{ marginBottom: "30px" }}>
             <img
-              src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png"
+              src={about}
               alt="technology"
               style={{
                 width: "100%",
@@ -52,9 +70,7 @@ const About = () => {
               }}
             />
           </Col>
-
           <Col md={6}>
-
             <h2 style={{ fontWeight: "700", marginBottom: "20px" }}>
               Who We Are
             </h2>
@@ -74,12 +90,8 @@ const About = () => {
             </p>
 
           </Col>
-
         </Row>
-
       </Container>
-
-      {/* MISSION VISION */}
 
       <div
         style={{
@@ -88,16 +100,24 @@ const About = () => {
         }}
       >
         <Container>
-
           <Row>
-
             <Col md={6} style={{ marginBottom: "30px" }}>
               <Card
                 style={{
                   padding: "35px",
                   border: "none",
                   borderRadius: "15px",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-10px)";
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
                 }}
               >
                 <h3 style={{ fontWeight: "600" }}>Our Mission</h3>
@@ -111,14 +131,23 @@ const About = () => {
                 </p>
               </Card>
             </Col>
-
             <Col md={6}>
               <Card
                 style={{
                   padding: "35px",
                   border: "none",
                   borderRadius: "15px",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-10px)";
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
                 }}
               >
                 <h3 style={{ fontWeight: "600" }}>Our Vision</h3>
@@ -130,13 +159,9 @@ const About = () => {
                 </p>
               </Card>
             </Col>
-
           </Row>
-
         </Container>
       </div>
-
-      {/* WHAT WE DO */}
 
       <Container style={{ padding: "70px 20px" }}>
 
@@ -176,31 +201,43 @@ const About = () => {
               <Card
                 style={{
                   textAlign: "center",
-                  padding: "30px",
+                  padding: "35px 25px",
                   border: "none",
                   borderRadius: "12px",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-10px) scale(1.02)";
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)";
+                  e.currentTarget.style.background = "#f8fbff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
+                  e.currentTarget.style.background = "#fff";
                 }}
               >
-                <div style={{ color: "#1e88e5", marginBottom: "15px" }}>
+
+                <div
+                  style={{
+                    color: "#1e88e5",
+                    marginBottom: "15px",
+                    transition: "0.3s"
+                  }}
+                >
                   {service.icon}
                 </div>
 
                 <h6 style={{ fontWeight: "600" }}>
                   {service.title}
                 </h6>
-
               </Card>
-
             </Col>
-
           ))}
-
         </Row>
-
       </Container>
-
-      {/* APPROACH */}
 
       <div
         style={{
@@ -233,11 +270,23 @@ const About = () => {
               <Col md={3} key={index} style={{ marginBottom: "20px" }}>
 
                 <div
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200}
                   style={{
                     background: "rgba(255,255,255,0.15)",
                     padding: "25px",
                     borderRadius: "10px",
-                    textAlign: "center"
+                    textAlign: "center",
+                    transition: "0.3s",
+                    cursor: "pointer"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-8px)";
+                    e.currentTarget.style.background = "rgba(255,255,255,0.25)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.background = "rgba(255,255,255,0.15)";
                   }}
                 >
                   {item}
@@ -251,8 +300,6 @@ const About = () => {
 
         </Container>
       </div>
-
-      {/* COMMITMENT */}
 
       <Container style={{ padding: "70px 20px" }}>
 
@@ -283,13 +330,9 @@ const About = () => {
               technology service provider that helps people and
               businesses navigate the digital future.
             </p>
-
           </Col>
-
         </Row>
-
       </Container>
-
     </div>
   );
 };

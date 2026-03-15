@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer
       style={{
-        background: "#0d1b2a",
+        background: "linear-gradient(90deg,#0f2027,#00c9a7)",
         color: "#fff",
         padding: "50px 20px 20px",
       }}
@@ -27,8 +27,6 @@ const Footer = () => {
           margin: "auto",
         }}
       >
-
-        {/* Top Section */}
         <div
           style={{
             display: "flex",
@@ -37,8 +35,6 @@ const Footer = () => {
             gap: "30px",
           }}
         >
-
-          {/* Left Section */}
           <div
             style={{
               flex: "1",
@@ -57,8 +53,6 @@ const Footer = () => {
               businesses grow digitally.
             </p>
           </div>
-
-          {/* Middle Section */}
           <div
             style={{
               flex: "1",
@@ -106,8 +100,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-
-          {/* Right Section */}
           <div
             style={{
               flex: "1",
@@ -123,10 +115,7 @@ const Footer = () => {
               <a href="#" style={iconStyle}><FaInstagram /></a>
             </div>
           </div>
-
         </div>
-
-        {/* Bottom */}
         <div
           style={{
             borderTop: "1px solid rgba(255,255,255,0.2)",
@@ -136,7 +125,7 @@ const Footer = () => {
             fontSize: "14px",
           }}
         >
-          © {year} CTI Technologies. All Rights Reserved.
+          © {year} Technology and solutions. All Rights Reserved.
         </div>
 
       </div>

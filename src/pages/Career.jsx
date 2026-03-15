@@ -94,16 +94,24 @@ const Career = () => {
               desc: "Flexible work environment with remote options."
             }
           ].map((item, index) => (
-
             <Col md={4} key={index} style={{ marginBottom: "30px" }}>
-
               <Card
                 style={{
                   textAlign: "center",
                   padding: "30px",
                   border: "none",
                   borderRadius: "12px",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-10px) scale(1.02)";
+                  e.currentTarget.style.boxShadow = "0 18px 40px rgba(0,0,0,0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0) scale(1)";
+                  e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
                 }}
               >
 
@@ -118,17 +126,10 @@ const Career = () => {
                 </p>
 
               </Card>
-
             </Col>
-
           ))}
-
         </Row>
-
       </Container>
-
-
-      {/* CURRENT OPENINGS */}
 
       <div
         style={{

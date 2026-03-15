@@ -2,10 +2,10 @@ import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
-  return (
-    <div>
 
-      {/* HERO SECTION */}
+  return (
+
+    <div>
 
       <div
         style={{
@@ -29,100 +29,143 @@ const Contact = () => {
               opacity: "0.9"
             }}
           >
-            Have a project idea or need digital solutions?  
+            Have a project idea or need digital solutions?
             Get in touch with the CTI team.
           </p>
 
         </Container>
       </div>
 
-
-      {/* CONTACT INFO */}
-
       <Container style={{ padding: "70px 20px" }}>
-
         <Row>
 
+          {/* EMAIL */}
           <Col md={4} style={{ marginBottom: "30px" }}>
-
             <Card
               style={{
                 textAlign: "center",
-                padding: "30px",
+                padding: "35px 25px",
                 border: "none",
-                borderRadius: "12px",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+                borderRadius: "15px",
+                boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                transition: "all 0.3s ease",
+                cursor: "pointer"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-10px)";
+                e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
               }}
             >
 
-              <FaEnvelope size={35} color="#1e88e5" />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "15px"
+                }}
+              >
+                <FaEnvelope size={35} color="#1e88e5" />
+              </div>
 
-              <h5 style={{ marginTop: "15px" }}>Email</h5>
+              <h5>Email</h5>
 
               <p style={{ color: "#666" }}>
                 cotechintelligence26@gmail.com
               </p>
 
             </Card>
-
           </Col>
 
-          <Col md={4} style={{ marginBottom: "30px" }}>
 
+          {/* PHONE */}
+          <Col md={4} style={{ marginBottom: "30px" }}>
             <Card
               style={{
                 textAlign: "center",
-                padding: "30px",
+                padding: "35px 25px",
                 border: "none",
-                borderRadius: "12px",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+                borderRadius: "15px",
+                boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                transition: "all 0.3s ease",
+                cursor: "pointer"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-10px)";
+                e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
               }}
             >
 
-              <FaPhoneAlt size={35} color="#1e88e5" />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "15px"
+                }}
+              >
+                <FaPhoneAlt size={35} color="#4CAF50" />
+              </div>
 
-              <h5 style={{ marginTop: "15px" }}>Phone</h5>
+              <h5>Phone</h5>
 
               <p style={{ color: "#666" }}>
                 +91 8013881718
               </p>
 
             </Card>
-
           </Col>
 
-          <Col md={4} style={{ marginBottom: "30px" }}>
 
+          {/* LOCATION */}
+          <Col md={4} style={{ marginBottom: "30px" }}>
             <Card
               style={{
                 textAlign: "center",
-                padding: "30px",
+                padding: "35px 25px",
                 border: "none",
-                borderRadius: "12px",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+                borderRadius: "15px",
+                boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+                transition: "all 0.3s ease",
+                cursor: "pointer"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-10px)";
+                e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.08)";
               }}
             >
 
-              <FaMapMarkerAlt size={35} color="#1e88e5" />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "15px"
+                }}
+              >
+                <FaMapMarkerAlt size={35} color="#FF5722" />
+              </div>
 
-              <h5 style={{ marginTop: "15px" }}>Location</h5>
+              <h5>Location</h5>
 
               <p style={{ color: "#666" }}>
-                Baruipur Railgate (Near Milon Mall)  
+                Baruipur Railgate (Near Milon Mall)
                 <br />
                 South 24 Parganas, Kolkata - 700144
               </p>
-
             </Card>
-
           </Col>
-
         </Row>
-
       </Container>
-
-
-      {/* CONTACT FORM + MAP */}
 
       <Container style={{ paddingBottom: "70px" }}>
 
@@ -185,20 +228,11 @@ const Contact = () => {
                 >
                   Send Message
                 </Button>
-
               </Form>
-
             </Card>
-
           </Col>
-
-
-          {/* GOOGLE MAP */}
-
           <Col md={6}>
-
             <div style={{ position: "relative" }}>
-
               <iframe
                 title="CTI Location"
                 src="https://www.google.com/maps?q=Baruipur+Railgate+Near+Milon+Mall+Baruipur+West+Bengal&output=embed"
@@ -230,15 +264,10 @@ const Contact = () => {
               >
                 Open in Google Maps
               </a>
-
             </div>
-
           </Col>
-
         </Row>
-
       </Container>
-
     </div>
   );
 };
