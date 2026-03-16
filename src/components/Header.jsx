@@ -21,7 +21,6 @@ const Header = () => {
 
   return (
     <>
-      {/* HEADER */}
       <div
         style={{
           background: "linear-gradient(90deg,#0f2027,#00c9a7)",
@@ -39,8 +38,6 @@ const Header = () => {
             alignItems: "center"
           }}
         >
-
-          {/* LOGO + COMPANY NAME */}
           <Link
             to="/"
             style={{
@@ -69,11 +66,9 @@ const Header = () => {
                 letterSpacing: "1px"
               }}
             >
-              Cotech & Intelligence
+              COTECH & INTELLIGENCE
             </span>
           </Link>
-
-          {/* DESKTOP MENU */}
           {!mobileView && (
             <div style={{ display: "flex", alignItems: "center" }}>
 

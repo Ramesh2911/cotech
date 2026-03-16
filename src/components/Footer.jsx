@@ -1,12 +1,11 @@
 import React from "react";
 import {
   FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
   FaInstagram
 }
   from "react-icons/fa";
-import logo from "../assets/logo.png";
+import { FaXTwitter } from "react-icons/fa6";
+import footer from "../assets/ctifooter.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -42,7 +41,7 @@ const Footer = () => {
             }}
           >
             <img
-              src={logo}
+              src={footer}
               alt="logo"
               style={{ width: "140px", marginBottom: "15px" }}
             />
@@ -109,10 +108,84 @@ const Footer = () => {
             <h4 style={{ marginBottom: "15px" }}>Follow Us</h4>
 
             <div style={{ display: "flex", gap: "15px", fontSize: "18px" }}>
-              <a href="#" style={iconStyle}><FaFacebookF /></a>
-              <a href="#" style={iconStyle}><FaTwitter /></a>
-              <a href="#" style={iconStyle}><FaLinkedinIn /></a>
-              <a href="#" style={iconStyle}><FaInstagram /></a>
+              <a
+                href="https://www.facebook.com/share/1UB4qRhpPm"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  width: "35px",
+                  height: "35px",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#fff",
+                  background: "rgba(255,255,255,0.15)",
+                  transition: "all 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-8px)";
+                  e.currentTarget.style.background = "#1877F2";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+                }}
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="https://x.com/pintu_sard67955"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  width: "35px",
+                  height: "35px",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#fff",
+                  background: "rgba(255,255,255,0.15)",
+                  transition: "all 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-8px)";
+                  e.currentTarget.style.background = "#000";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+                }}
+              >
+                <FaXTwitter />
+              </a>
+              <a
+                href="https://www.instagram.com/cotechintelligence?igsh=MTBtbjBhdjBtd3BkYg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  width: "35px",
+                  height: "35px",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#fff",
+                  background: "rgba(255,255,255,0.15)",
+                  transition: "all 0.3s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-8px)";
+                  e.currentTarget.style.background = "#E4405F";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+                }}
+              >
+                <FaInstagram />
+              </a>
             </div>
           </div>
         </div>
@@ -125,7 +198,7 @@ const Footer = () => {
             fontSize: "14px",
           }}
         >
-          © {year} Technology and solutions. All Rights Reserved.
+          © {year} CTI Technology and solutions. All Rights Reserved.
         </div>
 
       </div>
